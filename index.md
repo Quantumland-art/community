@@ -17,12 +17,12 @@ hero:
 features:
   - icon: 🌐
     title: Open Access
-    details: a platform built on github, accessible to all
+    details: hosted on github, accessible to everyone
   - icon: ⚡
-    title: Powered by the community
-    details: members contribute to build and maintain it
+    title: Powered by the Community
+    details: self-maintained, and built by contributions
   - icon: 🔗
-    title: For Art & Science
-    details: promoting exchange and new interactions
+    title: Connecting Art & Science
+    details: promoting new interactions and exchange
 ---
 
