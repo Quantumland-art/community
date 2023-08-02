@@ -5,7 +5,29 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   base: '/',
   title: "community.",
-  description: "hosting community discussions, contributions, and news about art and science with quantum computing",
+  description: "music, software, discussions, and events about quantum computing and creative practice",
+  head: [
+    [
+      'meta',
+      { property: 'og:image', content: 'https://community.quantumland.art/logo2.png'}
+    ],
+    [
+      'meta',
+      { property: 'og:title', content: 'Community.'}
+    ],
+    [
+      'meta',
+      { property: 'og:description', content: 'music, software, discussions, and events about quantum computing and creative practice'}
+    ],
+    [
+      'meta',
+      { property: 'twitter:card', content: 'summary_large_image'}
+    ],
+    [
+      'meta',
+      { property: 'twitter:image', content: 'https://community.quantumland.art/logo2.png'}
+    ]
+  ],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     editLink: {
