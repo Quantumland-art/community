@@ -9,7 +9,7 @@ export default defineConfig({
   head: [
     [
       'meta',
-      { property: 'og:image', content: 'https://community.quantumland.art/logo2.png'}
+      { property: 'og:image', content: 'https://community.quantumland.art/logo2.jpg'}
     ],
     [
       'meta',
@@ -25,7 +25,7 @@ export default defineConfig({
     ],
     [
       'meta',
-      { property: 'twitter:image', content: 'https://community.quantumland.art/logo2.png'}
+      { property: 'twitter:image', content: 'https://community.quantumland.art/logo2.jpg'}
     ]
   ],
   themeConfig: {
