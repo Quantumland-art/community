@@ -26,6 +26,10 @@ export default defineConfig({
     [
       'meta',
       { property: 'twitter:image', content: 'https://community.quantumland.art/logo2.jpg'}
+    ],
+    [
+      'link',
+      { rel: 'icon', type: 'image/png', href: 'https://community.quantumland.art/icon.png'}
     ]
   ],
   themeConfig: {
