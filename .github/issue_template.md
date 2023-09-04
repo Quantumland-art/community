@@ -1,15 +1,4 @@
-#### Description
-
-<!--
-Please include as detailed of a description as possible, including screenshots if applicable.
--->
-
-#### Notion Test Page ID
-
-<!--
-Please include the ID of at least one publicly accessible Notion page related to your issue.
-
-This is extremely helpful for us to debug and fix issues.
-
-Thanks!
--->
+<!-- begin instructions
+Please include as a detailed description as possible of the problem to solve, feature to implement, or change to make, including screenshots if applicable.
+If your idea is not very clear yet, then feel free to start a thread on the discussions forum (https://github.com/orgs/Quantumland-art/discussions) and bounce ideas there.
+end instructions -->
