@@ -63,7 +63,7 @@ export default siteConfig({
     // },
     {
       title: 'Forum',
-      pageId: 'https://github.com/orgs/Quantumland-art/discussions'
+      url: 'https://github.com/orgs/Quantumland-art/discussions'
     }
   ]
 })
