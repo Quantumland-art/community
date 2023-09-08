@@ -170,6 +170,40 @@
   text-align: center;
 }
 
+.community_notion-title {
+  padding-bottom: 0;
+  text-align: center;
+  font-size: 3.5em;
+/*  translate: 0 -1.2em; does not work on firefox!*/
+  position: relative;
+  top: -1.2em;
+  display: flex;
+  flex-shrink: 0 !important;
+  flex-direction: column;
+  background-image: -webkit-linear-gradient(30deg, rgb(131,58,180) 0%, rgb(253,29,29) 50%, rgb(252,176,69) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  width: initial;
+}
+
+.community_notion-title:after {
+  content: "quantumland.art";
+  justify-content: center;
+  font-size: 0.72em !important;
+  color: rgb(128,128,128);
+  -webkit-text-fill-color: rgb(88,88,88);
+}
+
+.notion-equation.notion-equation-block{
+  align-items: center;
+}
+
+.sc-fubCfw.etqZxx, .sc-fubCfw.jPfEIy {
+  display: none !!important;
+}
+
 .notion-collection-row {
   padding-bottom: 1em;
 }
