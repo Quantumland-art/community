@@ -3,13 +3,13 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  base: '/',
+  base: '/community/',
   title: "community.",
   description: "music, software, discussions, and events about quantum computing and creative practice",
   head: [
     [
       'meta',
-      { property: 'og:image', content: 'https://community.quantumland.art/logo2.jpg'}
+      { property: 'og:image', content: 'https://quantumland-art.github.io/community/logo2.jpg'}
     ],
     [
       'meta',
@@ -25,11 +25,11 @@ export default defineConfig({
     ],
     [
       'meta',
-      { property: 'twitter:image', content: 'https://community.quantumland.art/logo2.jpg'}
+      { property: 'twitter:image', content: 'https://quantumland-art.github.io/community/logo2.jpg'}
     ],
     [
       'link',
-      { rel: 'icon', type: 'image/png', href: 'https://community.quantumland.art/icon.png'}
+      { rel: 'icon', type: 'image/png', href: 'https://quantumland-art.github.io/community/icon.png'}
     ]
   ],
   themeConfig: {
