@@ -11,5 +11,12 @@ document.addEventListener('DOMContentLoaded', () => {
 		console.log(title);
 		title.classList.add('community_notion-title');
 
+		for (var i = 0; i < 6; i++) {
+			document.querySelectorAll(".notion-column")[i].style.setProperty('text-align', 'center');
+		}
+
+		for (var i = 0; i < 2; i++) {
+			document.querySelectorAll(".notion-page-link")[i].style.setProperty('justify-content', 'center');
+		}
 	}
 });
