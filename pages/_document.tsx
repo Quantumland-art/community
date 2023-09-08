@@ -61,6 +61,7 @@ export default class MyDocument extends Document {
 `
               }}
             />
+            <script src="communitypage.js" />
             <Main />
 
             <NextScript />
