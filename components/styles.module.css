@@ -68,7 +68,7 @@
 .settings a,
 .social a {
   cursor: pointer;
-  font-size: 2em;
+  font-size: 1.2em;
   display: inline-flex;
   padding: 0.25em;
   margin-right: 1vw;
@@ -83,6 +83,12 @@
 .settings a:hover,
 .social a:hover {
   transition: color 50ms ease-out;
+}
+
+.toggleDarkMode {
+  left: 50%;
+  bottom: 9.6px;
+  position: absolute;
 }
 
 .toggleDarkMode:hover {
@@ -140,6 +146,10 @@
   }
   .footer .copyright {
     order: 3;
+  }
+
+  .toggleDarkMode {
+    position: inherit;
   }
 }
 
