@@ -1,0 +1,56 @@
+{
+  "name": "notion-custom-domain",
+  "version": "0.1.0",
+  "description": "Custom domains for your public Notion pages",
+  "license": "MIT",
+  "author": "E. Hosso",
+  "contributors": [{
+    "name" : "Omar Costa Hamido",
+    "url" : "http://github.com/omarcostahamido"
+  }],
+  "scripts": {
+    "#debug": "node --nolazy --inspect-brk -r ts-node/register src/index.ts",
+    "debug": "node --nolazy --inspect -r ts-node/register src/index.ts",
+    "deploy": "vercel ${PAGE_URL:+-e PAGE_URL} ${GA_TRACKING_ID:+-e GA_TRACKING_ID}",
+    "deploy:prod": "yarn run deploy --prod",
+    "develop": "vercel dev",
+    "fix": "eslint --ext .ts . --fix && prettier --write --loglevel silent \"**/*.{json,md}\" && sort-package-json",
+    "postinstall": "node node_modules/husky/husky.js install",
+    "lint": "eslint --ext .ts ."
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.ts": [
+      "eslint --fix"
+    ],
+    "*.{json,md}": [
+      "prettier --write"
+    ],
+    "package.json": [
+      "sort-package-json"
+    ]
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-http-proxy": "^1.6.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/express-http-proxy": "^1.6.3",
+    "@typescript-eslint/eslint-plugin": "^4.31.0",
+    "@typescript-eslint/parser": "^4.31.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "husky": "3",
+    "lint-staged": "^11.1.2",
+    "prettier": "^2.4.0",
+    "sort-package-json": "^1.51.0",
+    "ts-node": "^10.2.1",
+    "typescript": "^4.4.3",
+    "vercel": "^23.1.2"
+  }
+}
