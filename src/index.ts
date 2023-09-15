@@ -180,6 +180,19 @@ const pageview = `
       }
     }
   });
+  const observer = new MutationObserver(() => {
+    const alllinks = document.querySelectorAll(".notion-page-mention-token");
+    for (var i = 0; i < alllinks.length; i++) {
+      if (alllinks[i].href.substr(0,27) == "http://ochland.notion.site/") {
+        alllinks[i].href = alllinks[i].href.substr(27);
+        alllinks[i].removeAttribute("data-token-index");
+      }
+      if (alllinks[i].href.substr(0,28) == "https://ochland.notion.site/") {
+        alllinks[i].href = alllinks[i].href.substr(28);
+        alllinks[i].removeAttribute("data-token-index");
+      }
+    }
+  });
   const config = { subtree: true, childList: true };
   // start observing change
   observer.observe(document, config);
@@ -242,7 +255,8 @@ app.use(
           .toString()
           .replace(/^/, ncd)
           .replace(/window.location.href(?=[^=]|={2,})/g, 'ncd.href()') // Exclude 'window.locaton.href=' but not 'window.locaton.href=='
-          .replace(/window.history.(pushState|replaceState)/g, 'ncd.$1');
+          .replace(/window.history.(pushState|replaceState)/g, 'ncd.$1')
+          .replace(/handleMutations\(e\)/g, 'console.log("done")'); // allow me to change links
       } else if (/^\/image[s]?\//.test(userReq.url)) {
         return proxyResData;
       } else {
