@@ -11,7 +11,6 @@ const {
 const { origin: pageDomain, pathname: pagePath } = new URL(PAGE_URL);
 const pageId = path.basename(pagePath).match(/[^-]*$/);
 
-// fake trigger 09
 // Map start page path to "/". Replacing URL for example:
 // - https://my.notion.site/0123456789abcdef0123456789abcdef -> https://mydomain.com/
 // - /My-Page-0123456789abcdef0123456789abcdef -> /
@@ -105,13 +104,6 @@ const pageview = `
   .notion-link-token.notion-focusable-token.notion-enable-hover > span {
     opacity: 1 !important;
   }
-  // .notion-page-mention-token.notion-text-mention-token.notion-focusable-token.notion-enable-hover:after {
-  //   content: '';
-  //   position: absolute;
-  //   width: 100%; height: 100%;
-  //   top: 0; left: 0;
-  //   cursor: pointer;
-  // }
 </style>
 <script>
   window.pagePath = location.pathname + location.search + location.hash;
@@ -134,7 +126,7 @@ const pageview = `
     if (window.location.href !== previousUrl) {
       previousUrl = window.location.href;
       var r = document.querySelector(':root');
-      if(window.location.href != "https://notion-custom-domain-ten.vercel.app/"){
+      if(window.location.href != "https://community.quantumland.art/"){
         r.style.setProperty('--jutifycont', 'initial'); 
         r.style.setProperty('--oldtitlevis', 'visible'); 
         r.style.setProperty('--oldtitleline', '1.2em'); 
@@ -155,32 +147,6 @@ const pageview = `
         window.location.href = "https://notion-custom-domain-ten.vercel.app/"+previousUrl.substr(28);
       }
     }
-    // my contant mutations here
-    // const clickablelink = document.querySelector('.notion-link-token.notion-focusable-token.notion-enable-hover');
-    // const clickablelinkparent = clickablelink.parentNode;
-    // clickablelinkparent.style.padding = "0.25rem 0.5rem";
-    // clickablelinkparent.onmouseover = function(){clickablelinkparent.style.setProperty('background', 'rgba(55, 53, 47, 0.08)');};
-    // clickablelinkparent.onmouseout = function() {clickablelinkparent.style.setProperty('background', 'transparent');};
-    // get all links
-    const alllinks = document.querySelectorAll(".notion-page-mention-token.notion-text-mention-token.notion-focusable-token.notion-enable-hover");
-    for (let i = 0; i < alllinks.length; i++) {
-      if(alllinks[i].href.substr(0,28) == "https://ochland.notion.site/"){
-        // alllinks[i].onclick = function(e) {
-        //   e.preventDefault();
-        //   window.location = newlink;
-        // };
-        // alllinks[i].style.setProperty('pointer-events', 'none');
-        // alllinks[i].style.setProperty('cursor', 'pointer', 'important');
-        // alllinks[i].addEventListener("click", function(event){
-        //   event.preventDefault();
-        //   window.location.href = "https://notion-custom-domain-ten.vercel.app/"+alllinks[i].href.substr(28);
-        // });
-        // alllinks[i].setAttribute("href", newlink);
-        // alllinks[i].href = "https://notion-custom-domain-ten.vercel.app/"+alllinks[i].href.substr(28);
-      }
-    }
-  });
-  const observer = new MutationObserver(() => {
     const alllinks = document.querySelectorAll(".notion-page-mention-token");
     for (var i = 0; i < alllinks.length; i++) {
       if (alllinks[i].href.substr(0,27) == "http://ochland.notion.site/") {
@@ -192,6 +158,8 @@ const pageview = `
         alllinks[i].removeAttribute("data-token-index");
       }
     }
+  });
+  const observer = new MutationObserver(() => {
   });
   const config = { subtree: true, childList: true };
   // start observing change
