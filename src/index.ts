@@ -21,6 +21,7 @@ const ncd = `var ncd={
   replaceState:function(a,b,url){history.replaceState(a,b,url.replace("${pageDomain}",location.origin).replace(/(^|[^/])\\/[^/].*${pageId}(?=\\?|$)/,"$1/"));pageview();}
 };
 let previousUrl = "";
+console.log("start observing");
 const observer = new MutationObserver(() => {
   console.log(" = = = = = = = = = = = = = ");
   console.log("something changed!")
