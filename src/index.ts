@@ -19,7 +19,51 @@ const ncd = `var ncd={
   href:function(){return location.href.replace(location.origin,"${pageDomain}").replace(/\\/(?=\\?|$)/,"/${pageId}")},
   pushState:function(a,b,url){history.pushState(a,b,url.replace("${pageDomain}",location.origin).replace(/(^|[^/])\\/[^/].*${pageId}(?=\\?|$)/,"$1/"));pageview();},
   replaceState:function(a,b,url){history.replaceState(a,b,url.replace("${pageDomain}",location.origin).replace(/(^|[^/])\\/[^/].*${pageId}(?=\\?|$)/,"$1/"));pageview();}
-};`.replace(/\n */gm, '');
+};
+let previousUrl = "";
+const observer = new MutationObserver(() => {
+  console.log(" = = = = = = = = = = = = = ");
+  console.log("something changed!")
+  if (window.location.href !== previousUrl) {
+    previousUrl = window.location.href;
+    var r = document.querySelector(':root');
+    if(window.location.href != "https://community.quantumland.art/" || window.location.href != "https://community-quantumland-art-git-frontend-och.vercel.app/" || window.location.href != "https://community-quantumland-art-git-frontendupdates-och.vercel.app/"){
+      r.style.setProperty('--jutifycont', 'initial'); 
+      r.style.setProperty('--oldtitlevis', 'visible'); 
+      r.style.setProperty('--oldtitleline', '1.2em'); 
+      r.style.setProperty('--beforecont', '""');
+      r.style.setProperty('--aftercont', '""');
+      r.style.setProperty('--biglogo', 'block');
+      r.style.setProperty('--mainmargin', '8px');
+    } else {
+      r.style.setProperty('--jutifycont', 'center'); 
+      r.style.setProperty('--oldtitlevis', 'hidden'); 
+      r.style.setProperty('--oldtitleline', '0'); 
+      r.style.setProperty('--beforecont', '"Community."');
+      r.style.setProperty('--aftercont', '"quantumland.art"'); 
+      r.style.setProperty('--biglogo', 'none');
+      r.style.setProperty('--mainmargin', '80px');
+    }
+    console.log("got here 1");
+  }
+  const alllinks = document.querySelectorAll(".notion-page-mention-token");
+  for (var i = 0; i < alllinks.length; i++) {
+    console.log("got here 2");
+    if (alllinks[i].href.substr(0,27) == "http://ochland.notion.site/") {
+      alllinks[i].href = alllinks[i].href.substr(27);
+      alllinks[i].removeAttribute("data-token-index");
+    }
+    if (alllinks[i].href.substr(0,28) == "https://ochland.notion.site/") {
+      alllinks[i].href = alllinks[i].href.substr(28);
+      alllinks[i].removeAttribute("data-token-index");
+    }
+  }
+});
+const observer = new MutationObserver(() => {
+});
+const config = { subtree: true, childList: true };
+// start observing change
+observer.observe(document, config);`.replace(/\n */gm, '');
 
 const ga = GA_TRACKING_ID
   ? `<!-- Global site tag (gtag.js) - Google Analytics -->
@@ -118,53 +162,7 @@ const pageview = `
   window.addEventListener('popstate', pageview);
 </script>
 <script>
-  let previousUrl = "";
-  const observer = new MutationObserver(() => {
-    console.log(" = = = = = = = = = = = = = ");
-    console.log("something changed!")
-    if (window.location.href !== previousUrl) {
-      previousUrl = window.location.href;
-      var r = document.querySelector(':root');
-      if(window.location.href != "https://community.quantumland.art/" || window.location.href != "https://community-quantumland-art-git-frontend-och.vercel.app/" || window.location.href != "https://community-quantumland-art-git-frontendupdates-och.vercel.app/"){
-        r.style.setProperty('--jutifycont', 'initial'); 
-        r.style.setProperty('--oldtitlevis', 'visible'); 
-        r.style.setProperty('--oldtitleline', '1.2em'); 
-        r.style.setProperty('--beforecont', '""');
-        r.style.setProperty('--aftercont', '""');
-        r.style.setProperty('--biglogo', 'block');
-        r.style.setProperty('--mainmargin', '8px');
-      } else {
-        r.style.setProperty('--jutifycont', 'center'); 
-        r.style.setProperty('--oldtitlevis', 'hidden'); 
-        r.style.setProperty('--oldtitleline', '0'); 
-        r.style.setProperty('--beforecont', '"Community."');
-        r.style.setProperty('--aftercont', '"quantumland.art"'); 
-        r.style.setProperty('--biglogo', 'none');
-        r.style.setProperty('--mainmargin', '80px');
-      }
-      console.log("got here 1");
-      // if (previousUrl.substr(0,28) == "https://ochland.notion.site/"){
-      //   window.location.href = "https://notion-custom-domain-ten.vercel.app/"+previousUrl.substr(28);
-      // }
-    }
-    const alllinks = document.querySelectorAll(".notion-page-mention-token");
-    for (var i = 0; i < alllinks.length; i++) {
-      console.log("got here 2");
-      if (alllinks[i].href.substr(0,27) == "http://ochland.notion.site/") {
-        alllinks[i].href = alllinks[i].href.substr(27);
-        alllinks[i].removeAttribute("data-token-index");
-      }
-      if (alllinks[i].href.substr(0,28) == "https://ochland.notion.site/") {
-        alllinks[i].href = alllinks[i].href.substr(28);
-        alllinks[i].removeAttribute("data-token-index");
-      }
-    }
-  });
-  const observer = new MutationObserver(() => {
-  });
-  const config = { subtree: true, childList: true };
-  // start observing change
-  observer.observe(document, config);
+  
 </script>`;
 
 const app = express();
