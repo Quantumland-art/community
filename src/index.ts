@@ -123,10 +123,12 @@ const pageview = `
 <script>
   let previousUrl = "";
   const observer = new MutationObserver(() => {
+    console.log(" = = = = = = = = = = = = = ");
+    console.log("something changed!")
     if (window.location.href !== previousUrl) {
       previousUrl = window.location.href;
       var r = document.querySelector(':root');
-      if(window.location.href != "https://community.quantumland.art/"){
+      if(window.location.href != "https://community.quantumland.art/" || window.location.href != "https://community-quantumland-art-git-frontend-och.vercel.app/"){
         r.style.setProperty('--jutifycont', 'initial'); 
         r.style.setProperty('--oldtitlevis', 'visible'); 
         r.style.setProperty('--oldtitleline', '1.2em'); 
@@ -143,9 +145,9 @@ const pageview = `
         r.style.setProperty('--biglogo', 'none');
         r.style.setProperty('--mainmargin', '80px');
       }
-      if (previousUrl.substr(0,28) == "https://ochland.notion.site/"){
-        window.location.href = "https://notion-custom-domain-ten.vercel.app/"+previousUrl.substr(28);
-      }
+      // if (previousUrl.substr(0,28) == "https://ochland.notion.site/"){
+      //   window.location.href = "https://notion-custom-domain-ten.vercel.app/"+previousUrl.substr(28);
+      // }
     }
     const alllinks = document.querySelectorAll(".notion-page-mention-token");
     for (var i = 0; i < alllinks.length; i++) {
