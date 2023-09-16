@@ -133,10 +133,10 @@ const pageview = `
 </script>
 <script>
   let previousUrl = "";
-  console.log("start observing");
+  // console.log("start observing");
   const observer = new MutationObserver(() => {
-    console.log(" = = = = = = = = = = = = = ");
-    console.log("something changed!");
+    // console.log(" = = = = = = = = = = = = = ");
+    // console.log("something changed!");
     if (window.location.href !== previousUrl) {
       previousUrl = window.location.href;
       var r = document.querySelector(':root');
@@ -158,14 +158,14 @@ const pageview = `
         r.style.setProperty('--aftercont', '"quantumland.art"'); 
         r.style.setProperty('--biglogo', 'none');
         r.style.setProperty('--mainmargin', '80px');
-        r.style.setProperty('--pageblock', 'flex');
-        r.style.setProperty('--pagecontent', 'center');
+        if(!document.querySelector(".notion-html.notion-mobile")){
+          r.style.setProperty('--pageblock', 'flex');
+          r.style.setProperty('--pagecontent', 'center');
+        }
       }
-      console.log("got here 1");
     }
     const alllinks = document.querySelectorAll(".notion-page-mention-token");
     for (var i = 0; i < alllinks.length; i++) {
-      console.log("got here 2");
       if (alllinks[i].href.substr(0,27) == "http://ochland.notion.site/") {
         alllinks[i].href = alllinks[i].href.substr(27);
         alllinks[i].removeAttribute("data-token-index");
@@ -232,8 +232,8 @@ app.use(
     },
     userResDecorator: (_proxyRes, proxyResData, userReq) => {
       if (/^\/app-.*\.js$/.test(userReq.url)) {
-        console.log("this is a print of proxyResData:");
-        console.log(proxyResData);
+        // console.log("this is a print of proxyResData:");
+        // console.log(proxyResData);
         return proxyResData
           .toString()
           .replace(/^/, ncd)
