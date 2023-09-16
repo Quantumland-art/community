@@ -43,9 +43,14 @@ const pageview = `
     --aftercont: 'quantumland.art';
     --biglogo: none;
     --mainmargin: 80px;
+    --pageblock: flex;
+    --pagecontent: center;
   }
   .notion-topbar > div > div:nth-last-child(1), .notion-topbar > div > div:nth-last-child(2), .notion-topbar > div > div:nth-last-child(3) { 
     display:none !important; 
+  }
+  .notion-topbar-mobile > div:nth-last-child(1) {
+    display:none !important;  
   }
   .notranslate.shadow-cursor-breadcrumb > div:nth-child(1) > div:nth-child(2) {
     display: none !important;
@@ -105,10 +110,10 @@ const pageview = `
     padding-bottom: 0 !important;
   }
   .notion-selectable.notion-page-block {
-    display: flex;
+    display: var(--pageblock);
   }
   .notion-page-content {
-    text-align: center;
+    text-align: var(--pagecontent);
   }
 </style>
 <script>
@@ -143,6 +148,8 @@ const pageview = `
         r.style.setProperty('--aftercont', '""');
         r.style.setProperty('--biglogo', 'block');
         r.style.setProperty('--mainmargin', '8px');
+        r.style.setProperty('--pageblock', 'initial');
+        r.style.setProperty('--pagecontent', 'initial');
       } else {
         r.style.setProperty('--jutifycont', 'center'); 
         r.style.setProperty('--oldtitlevis', 'hidden'); 
@@ -151,6 +158,8 @@ const pageview = `
         r.style.setProperty('--aftercont', '"quantumland.art"'); 
         r.style.setProperty('--biglogo', 'none');
         r.style.setProperty('--mainmargin', '80px');
+        r.style.setProperty('--pageblock', 'flex');
+        r.style.setProperty('--pagecontent', 'center');
       }
       console.log("got here 1");
     }
