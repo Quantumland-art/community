@@ -40,17 +40,25 @@ const pageview = `
     --oldtitlevis: hidden;
     --oldtitleline: 0;
     --beforecont: 'Community.'; 
-    --aftercont: 'quantumland.art'
+    --aftercont: 'quantumland.art';
     --biglogo: none;
     --mainmargin: 80px;
+    --pageblock: flex;
+    --pagecontent: center;
   }
   .notion-topbar > div > div:nth-last-child(1), .notion-topbar > div > div:nth-last-child(2), .notion-topbar > div > div:nth-last-child(3) { 
     display:none !important; 
+  }
+  .notion-topbar-mobile > div:nth-last-child(1) {
+    display:none !important;  
   }
   .notranslate.shadow-cursor-breadcrumb > div:nth-child(1) > div:nth-child(2) {
     display: none !important;
   }
   .notranslate.shadow-cursor-breadcrumb > div:nth-child(1) > a > div > div:nth-child(2) {
+    display: none !important;
+  }
+  .notranslate.shadow-cursor-breadcrumb > div:nth-child(1) > div:nth-child(1) > div > div:nth-child(2) {
     display: none !important;
   }
   .katex-display > .katex {
@@ -91,9 +99,6 @@ const pageview = `
     line-height: 0.8em;
     color: rgb(88, 88, 88);
   }
-  a[href^="https://ochland.notion.site"] {
-
-  }
   .notion-selectable.notion-equation-block > div > div {
     pointer-events: none;
     cursor: default;
@@ -103,6 +108,15 @@ const pageview = `
   }
   .notion-link-token.notion-focusable-token.notion-enable-hover > span {
     opacity: 1 !important;
+  }
+  .notion-page-content {
+    padding-bottom: 0 !important;
+  }
+  .notion-selectable.notion-page-block {
+    display: var(--pageblock);
+  }
+  .notion-page-content {
+    text-align: var(--pagecontent);
   }
 </style>
 <script>
@@ -122,11 +136,14 @@ const pageview = `
 </script>
 <script>
   let previousUrl = "";
+  // console.log("start observing");
   const observer = new MutationObserver(() => {
+    // console.log(" = = = = = = = = = = = = = ");
+    // console.log("something changed!");
     if (window.location.href !== previousUrl) {
       previousUrl = window.location.href;
       var r = document.querySelector(':root');
-      if(window.location.href != "https://community.quantumland.art/"){
+      if(window.location.href != "https://community.quantumland.art/" && window.location.href != "https://community-quantumland-art-git-frontend-och.vercel.app/" && window.location.href != "https://community-quantumland-art-git-frontendupdates-och.vercel.app/"){
         r.style.setProperty('--jutifycont', 'initial'); 
         r.style.setProperty('--oldtitlevis', 'visible'); 
         r.style.setProperty('--oldtitleline', '1.2em'); 
@@ -134,6 +151,8 @@ const pageview = `
         r.style.setProperty('--aftercont', '""');
         r.style.setProperty('--biglogo', 'block');
         r.style.setProperty('--mainmargin', '8px');
+        r.style.setProperty('--pageblock', 'initial');
+        r.style.setProperty('--pagecontent', 'initial');
       } else {
         r.style.setProperty('--jutifycont', 'center'); 
         r.style.setProperty('--oldtitlevis', 'hidden'); 
@@ -142,9 +161,16 @@ const pageview = `
         r.style.setProperty('--aftercont', '"quantumland.art"'); 
         r.style.setProperty('--biglogo', 'none');
         r.style.setProperty('--mainmargin', '80px');
-      }
-      if (previousUrl.substr(0,28) == "https://ochland.notion.site/"){
-        window.location.href = "https://notion-custom-domain-ten.vercel.app/"+previousUrl.substr(28);
+        document.querySelector(".notion-page-content > div:nth-last-child(2)").style.textAlign = 'center';
+        if(!document.querySelector(".notion-html.notion-mobile")){
+          document.querySelector(".notion-page-content > div:nth-last-child(2)").style.textAlign = 'initial';
+          r.style.setProperty('--pageblock', 'flex');
+          r.style.setProperty('--pagecontent', 'center');
+        } 
+        // other ways to change properties:
+          // document.querySelector(".notranslate.shadow-cursor-breadcrumb > div > div > div > div:nth-child(2)").style.display = 'none';
+          // document.querySelector(".notranslate.shadow-cursor-breadcrumb > div > div > div > div:nth-child(2)").style.setAttribute( 'display', 'none !important' );
+          // document.querySelector(".notranslate.shadow-cursor-breadcrumb > div > div > div > div:nth-child(2)").style.setProperty('display', 'none', 'important');
       }
     }
     const alllinks = document.querySelectorAll(".notion-page-mention-token");
@@ -159,11 +185,9 @@ const pageview = `
       }
     }
   });
-  const observer = new MutationObserver(() => {
-  });
   const config = { subtree: true, childList: true };
   // start observing change
-  observer.observe(document, config);
+  observer.observe(document, config);  
 </script>`;
 
 const app = express();
@@ -217,8 +241,8 @@ app.use(
     },
     userResDecorator: (_proxyRes, proxyResData, userReq) => {
       if (/^\/app-.*\.js$/.test(userReq.url)) {
-        console.log("this is a print of proxyResData:");
-        console.log(proxyResData);
+        // console.log("this is a print of proxyResData:");
+        // console.log(proxyResData);
         return proxyResData
           .toString()
           .replace(/^/, ncd)
