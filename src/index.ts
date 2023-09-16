@@ -163,7 +163,9 @@ const pageview = `
           r.style.setProperty('--pagecontent', 'center');
         } else {
           document.querySelector(".notion-page-content > div:nth-last-child(2)").style.textAlign = 'center';
-          document.querySelector(".notranslate.shadow-cursor-breadcrumb > div > div > div > div:nth-child(2)").style.display = 'none';
+          // document.querySelector(".notranslate.shadow-cursor-breadcrumb > div > div > div > div:nth-child(2)").style.display = 'none';
+          document.querySelector(".notranslate.shadow-cursor-breadcrumb > div > div > div > div:nth-child(2)").style.setAttribute( 'display', 'none !important' );
+          // document.querySelector(".notranslate.shadow-cursor-breadcrumb > div > div > div > div:nth-child(2)").style.setProperty('display', 'none', 'important');
         }
       }
     }
