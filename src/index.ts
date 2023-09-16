@@ -40,7 +40,7 @@ const pageview = `
     --oldtitlevis: hidden;
     --oldtitleline: 0;
     --beforecont: 'Community.'; 
-    --aftercont: 'quantumland.art'
+    --aftercont: 'quantumland.art';
     --biglogo: none;
     --mainmargin: 80px;
   }
