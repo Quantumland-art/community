@@ -133,10 +133,10 @@ const pageview = `
 </script>
 <script>
   let previousUrl = "";
-  // console.log("start observing");
+  console.log("create observer");
   const observer = new MutationObserver(() => {
-    // console.log(" = = = = = = = = = = = = = ");
-    // console.log("something changed!");
+    console.log(" = = = = = = = = = = = = = ");
+    console.log("something changed!");
     if (window.location.href !== previousUrl) {
       previousUrl = window.location.href;
       var r = document.querySelector(':root');
@@ -158,9 +158,11 @@ const pageview = `
         r.style.setProperty('--aftercont', '"quantumland.art"'); 
         r.style.setProperty('--biglogo', 'none');
         r.style.setProperty('--mainmargin', '80px');
+        console.log("got here 5");
         if(!document.querySelector(".notion-html.notion-mobile")){
           r.style.setProperty('--pageblock', 'flex');
           r.style.setProperty('--pagecontent', 'center');
+          console.log("got here 4");
         } else {
           console.log("got here 1");
           document.querySelector(".notion-page-content > div:nth-last-child(2)").style.textAlign = 'center';
