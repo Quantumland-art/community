@@ -102,7 +102,7 @@ const pageview = `
     opacity: 1 !important;
   }
   .notion-page-content {
-    padding-bottom: 0;
+    padding-bottom: 0 !important;
   }
   .notion-selectable.notion-page-block {
     display: flex;
