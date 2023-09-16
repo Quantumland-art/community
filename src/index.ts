@@ -60,8 +60,6 @@ const observer = new MutationObserver(() => {
     }
   }
 });
-const observer = new MutationObserver(() => {
-});
 const config = { subtree: true, childList: true };
 // start observing change
 observer.observe(document, config);`.replace(/\n */gm, '');
