@@ -58,7 +58,7 @@ const pageview = `
   .notranslate.shadow-cursor-breadcrumb > div:nth-child(1) > a > div > div:nth-child(2) {
     display: none !important;
   }
-  .notranslate.shadow-cursor-breadcrumb > div > div > div > div:nth-child(2) {
+  .notranslate.shadow-cursor-breadcrumb > div:nth-child(1) > div:nth-child(1) > div > div:nth-child(2) {
     display: none !important;
   }
   .katex-display > .katex {
@@ -165,7 +165,7 @@ const pageview = `
           r.style.setProperty('--pageblock', 'flex');
           r.style.setProperty('--pagecontent', 'center');
         } else {
-          // document.querySelector(".notion-page-content > div:nth-last-child(2)").style.textAlign = 'center';
+          document.querySelector(".notion-page-content > div:nth-last-child(2)").style.textAlign = 'center';
           // document.querySelector(".notranslate.shadow-cursor-breadcrumb > div > div > div > div:nth-child(2)").style.display = 'none';
           // document.querySelector(".notranslate.shadow-cursor-breadcrumb > div > div > div > div:nth-child(2)").style.setAttribute( 'display', 'none !important' );
           // document.querySelector(".notranslate.shadow-cursor-breadcrumb > div > div > div > div:nth-child(2)").style.setProperty('display', 'none', 'important');
