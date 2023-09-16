@@ -101,6 +101,15 @@ const pageview = `
   .notion-link-token.notion-focusable-token.notion-enable-hover > span {
     opacity: 1 !important;
   }
+  .notion-page-content {
+    padding-bottom: 0;
+  }
+  .notion-selectable.notion-page-block {
+    display: flex;
+  }
+  .notion-page-content {
+    text-align: center;
+  }
 </style>
 <script>
   window.pagePath = location.pathname + location.search + location.hash;
