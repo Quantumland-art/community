@@ -91,9 +91,6 @@ const pageview = `
     line-height: 0.8em;
     color: rgb(88, 88, 88);
   }
-  a[href^="https://ochland.notion.site"] {
-
-  }
   .notion-selectable.notion-equation-block > div > div {
     pointer-events: none;
     cursor: default;
@@ -145,12 +142,14 @@ const pageview = `
         r.style.setProperty('--biglogo', 'none');
         r.style.setProperty('--mainmargin', '80px');
       }
+      console.log("got here 1");
       // if (previousUrl.substr(0,28) == "https://ochland.notion.site/"){
       //   window.location.href = "https://notion-custom-domain-ten.vercel.app/"+previousUrl.substr(28);
       // }
     }
     const alllinks = document.querySelectorAll(".notion-page-mention-token");
     for (var i = 0; i < alllinks.length; i++) {
+      console.log("got here 2");
       if (alllinks[i].href.substr(0,27) == "http://ochland.notion.site/") {
         alllinks[i].href = alllinks[i].href.substr(27);
         alllinks[i].removeAttribute("data-token-index");
