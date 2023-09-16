@@ -161,15 +161,16 @@ const pageview = `
         r.style.setProperty('--aftercont', '"quantumland.art"'); 
         r.style.setProperty('--biglogo', 'none');
         r.style.setProperty('--mainmargin', '80px');
+        document.querySelector(".notion-page-content > div:nth-last-child(2)").style.textAlign = 'center';
         if(!document.querySelector(".notion-html.notion-mobile")){
+          document.querySelector(".notion-page-content > div:nth-last-child(2)").style.textAlign = 'initial';
           r.style.setProperty('--pageblock', 'flex');
           r.style.setProperty('--pagecontent', 'center');
-        } else {
-          document.querySelector(".notion-page-content > div:nth-last-child(2)").style.textAlign = 'center';
+        } 
+        // other ways to change properties:
           // document.querySelector(".notranslate.shadow-cursor-breadcrumb > div > div > div > div:nth-child(2)").style.display = 'none';
           // document.querySelector(".notranslate.shadow-cursor-breadcrumb > div > div > div > div:nth-child(2)").style.setAttribute( 'display', 'none !important' );
           // document.querySelector(".notranslate.shadow-cursor-breadcrumb > div > div > div > div:nth-child(2)").style.setProperty('display', 'none', 'important');
-        }
       }
     }
     const alllinks = document.querySelectorAll(".notion-page-mention-token");
