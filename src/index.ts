@@ -158,7 +158,9 @@ const pageview = `
         r.style.setProperty('--aftercont', '"quantumland.art"'); 
         r.style.setProperty('--biglogo', 'none');
         r.style.setProperty('--mainmargin', '80px');
+        document.querySelector(".notion-page-content > div:nth-last-child(2)").style.textAlign = 'center';
         if(!document.querySelector(".notion-html.notion-mobile")){
+          document.querySelector(".notion-page-content > div:nth-last-child(2)").style.textAlign = '';
           r.style.setProperty('--pageblock', 'flex');
           r.style.setProperty('--pagecontent', 'center');
         }
