@@ -24,7 +24,7 @@ let previousUrl = "";
 console.log("start observing");
 const observer = new MutationObserver(() => {
   console.log(" = = = = = = = = = = = = = ");
-  console.log("something changed!")
+  console.log("something changed!");
   if (window.location.href !== previousUrl) {
     previousUrl = window.location.href;
     var r = document.querySelector(':root');
