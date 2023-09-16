@@ -58,6 +58,9 @@ const pageview = `
   .notranslate.shadow-cursor-breadcrumb > div:nth-child(1) > a > div > div:nth-child(2) {
     display: none !important;
   }
+  .notranslate.shadow-cursor-breadcrumb > div > div > div > div:nth-child(2) {
+    display: none !important;
+  }
   .katex-display > .katex {
     padding-right: 0 !important;
   }
@@ -133,10 +136,10 @@ const pageview = `
 </script>
 <script>
   let previousUrl = "";
-  console.log("create observer");
+  // console.log("start observing");
   const observer = new MutationObserver(() => {
-    console.log(" = = = = = = = = = = = = = ");
-    console.log("something changed!");
+    // console.log(" = = = = = = = = = = = = = ");
+    // console.log("something changed!");
     if (window.location.href !== previousUrl) {
       previousUrl = window.location.href;
       var r = document.querySelector(':root');
@@ -158,17 +161,14 @@ const pageview = `
         r.style.setProperty('--aftercont', '"quantumland.art"'); 
         r.style.setProperty('--biglogo', 'none');
         r.style.setProperty('--mainmargin', '80px');
-        console.log("got here 5");
         if(!document.querySelector(".notion-html.notion-mobile")){
           r.style.setProperty('--pageblock', 'flex');
           r.style.setProperty('--pagecontent', 'center');
-          console.log("got here 4");
         } else {
-          console.log("got here 1");
-          document.querySelector(".notion-page-content > div:nth-last-child(2)").style.textAlign = 'center';
-          console.log("got here 2");
-          document.querySelector(".notranslate.shadow-cursor-breadcrumb > div > div > div > div:nth-child(2)").style.setProperty('display', 'none', 'important');
-          console.log("got here 3");
+          // document.querySelector(".notion-page-content > div:nth-last-child(2)").style.textAlign = 'center';
+          // document.querySelector(".notranslate.shadow-cursor-breadcrumb > div > div > div > div:nth-child(2)").style.display = 'none';
+          // document.querySelector(".notranslate.shadow-cursor-breadcrumb > div > div > div > div:nth-child(2)").style.setAttribute( 'display', 'none !important' );
+          // document.querySelector(".notranslate.shadow-cursor-breadcrumb > div > div > div > div:nth-child(2)").style.setProperty('display', 'none', 'important');
         }
       }
     }
