@@ -162,8 +162,11 @@ const pageview = `
           r.style.setProperty('--pageblock', 'flex');
           r.style.setProperty('--pagecontent', 'center');
         } else {
+          console.log("got here 1");
           document.querySelector(".notion-page-content > div:nth-last-child(2)").style.textAlign = 'center';
+          console.log("got here 2");
           document.querySelector(".notranslate.shadow-cursor-breadcrumb > div > div > div > div:nth-child(2)").style.setProperty('display', 'none', 'important');
+          console.log("got here 3");
         }
       }
     }
