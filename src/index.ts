@@ -126,7 +126,7 @@ const pageview = `
     if (window.location.href !== previousUrl) {
       previousUrl = window.location.href;
       var r = document.querySelector(':root');
-      if(window.location.href != "https://community.quantumland.art/" || window.location.href != "https://community-quantumland-art-git-frontend-och.vercel.app/" || window.location.href != "https://community-quantumland-art-git-frontendupdates-och.vercel.app/"){
+      if(window.location.href != "https://community.quantumland.art/" && window.location.href != "https://community-quantumland-art-git-frontend-och.vercel.app/" && window.location.href != "https://community-quantumland-art-git-frontendupdates-och.vercel.app/"){
         r.style.setProperty('--jutifycont', 'initial'); 
         r.style.setProperty('--oldtitlevis', 'visible'); 
         r.style.setProperty('--oldtitleline', '1.2em'); 
