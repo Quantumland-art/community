@@ -119,7 +119,7 @@ const pageview = `
     text-align: var(--pagecontent);
   }
   a > div > .pseudoSelection {
-    display: var(--biglogo);
+    display: var(--biglogo) !important;
   }
 </style>
 <script>
