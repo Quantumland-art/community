@@ -118,6 +118,16 @@ const pageview = `
   .notion-page-content {
     text-align: var(--pagecontent);
   }
+  a > div > .pseudoSelection {
+    display: var(--biglogo) !important;
+  }
+  a > div > div > div {
+    justify-content: var(--jutifycont) !important;
+  }
+  .notion-selectable.notion-text-block[data-block-id='4cad56c2-e491-42a5-b462-5fd3ec52b35e'] > div > div > div" {
+    display: var(--pageblock) !important;
+    justify-content: var(--jutifycont) !important;
+  }
 </style>
 <script>
   window.pagePath = location.pathname + location.search + location.hash;
