@@ -118,6 +118,9 @@ const pageview = `
   .notion-page-content {
     text-align: var(--pagecontent);
   }
+  a > div > .pseudoSelection {
+    display: var(--biglogo);
+  }
 </style>
 <script>
   window.pagePath = location.pathname + location.search + location.hash;
