@@ -202,81 +202,82 @@ const pageview = `
 
 const app = express();
 
-app
-  .get('/forum', (req, res) => {
-    res.redirect('https://github.com/orgs/Quantumland-art/discussions')
-    return
-  })
-  .use(
-    proxy(pageDomain, {
-      proxyReqOptDecorator: (proxyReqOpts) => {
-        if (proxyReqOpts.headers) {
-          proxyReqOpts.headers['accept-encoding'] = 'gzip';
-        }
-        return proxyReqOpts;
-      },
-      proxyReqPathResolver: (req) => {
-        // Replace '/' with `/${pageId}`
-        return req.url.replace(/\/(\?|$)/, `/${pageId}$1`);
-      },
-      userResHeaderDecorator: (headers, userReq) => {
-        if (headers['location']) {
-          // "https://www.notion.so/syncCookies?backUrl=https%3A%2F%2Fmy.notion.site%2F0123456789abcdef0123456789abcdef%3Fv%3D1"
-          // -> "https://mydomain.com/syncCookies?backUrl=https%3A%2F%2Fmydomain.com%2F0123456789abcdef0123456789abcdef%3Fv%3D1"
-          headers['location'] = headers['location'].replace(
-            /(https?)(:\/\/|%3A%2F%2F)[^.]+\.notion\.(so|site)/g,
-            `${userReq.headers['x-forwarded-proto']}$2${userReq.headers['x-forwarded-host']}`,
-          );
-        }
+// app.get('/forum', (req, res) => {
+//   res.redirect('https://github.com/orgs/Quantumland-art/discussions')
+// })
+// app.use('/forum', function (req, res, next) {
+//   next()
+// })
+app.use('/forum', proxy('https://github.com/orgs/Quantumland-art/discussions'))
+app.use(
+  proxy(pageDomain, {
+    proxyReqOptDecorator: (proxyReqOpts) => {
+      if (proxyReqOpts.headers) {
+        proxyReqOpts.headers['accept-encoding'] = 'gzip';
+      }
+      return proxyReqOpts;
+    },
+    proxyReqPathResolver: (req) => {
+      // Replace '/' with `/${pageId}`
+      // if (req.url == "/forum") { return req.url };
+      return req.url.replace(/\/(\?|$)/, `/${pageId}$1`);
+    },
+    userResHeaderDecorator: (headers, userReq) => {
+      if (headers['location']) {
+        // "https://www.notion.so/syncCookies?backUrl=https%3A%2F%2Fmy.notion.site%2F0123456789abcdef0123456789abcdef%3Fv%3D1"
+        // -> "https://mydomain.com/syncCookies?backUrl=https%3A%2F%2Fmydomain.com%2F0123456789abcdef0123456789abcdef%3Fv%3D1"
+        headers['location'] = headers['location'].replace(
+          /(https?)(:\/\/|%3A%2F%2F)[^.]+\.notion\.(so|site)/g,
+          `${userReq.headers['x-forwarded-proto']}$2${userReq.headers['x-forwarded-host']}`,
+        );
+      }
 
-        if (headers['set-cookie']) {
-          // "Domain=notion.site" -> "Domain=mydomain.com"
-          // "; Domain=notion.site;' -> '; Domain=mydomain.com;"
-          const domain = (userReq.headers['x-forwarded-host'] as string).replace(
-            /:.*/,
-            '',
-          );
-          headers['set-cookie'] = headers['set-cookie'].map((cookie) =>
-            cookie.replace(
-              /((?:^|; )Domain=)((?:[^.]+\.)?notion\.(?:so|site))(;|$)/g,
-              `$1${domain}$3`,
-            ),
-          );
-        }
+      if (headers['set-cookie']) {
+        // "Domain=notion.site" -> "Domain=mydomain.com"
+        // "; Domain=notion.site;' -> '; Domain=mydomain.com;"
+        const domain = (userReq.headers['x-forwarded-host'] as string).replace(
+          /:.*/,
+          '',
+        );
+        headers['set-cookie'] = headers['set-cookie'].map((cookie) =>
+          cookie.replace(
+            /((?:^|; )Domain=)((?:[^.]+\.)?notion\.(?:so|site))(;|$)/g,
+            `$1${domain}$3`,
+          ),
+        );
+      }
 
-        const csp = headers['content-security-policy'] as string;
-        if (csp) {
-          headers['content-security-policy'] = csp.replace(
-            /(?=(script-src|connect-src) )[^;]*/g,
-            '$& https://www.googletagmanager.com https://www.google-analytics.com',
-          );
-        }
+      const csp = headers['content-security-policy'] as string;
+      if (csp) {
+        headers['content-security-policy'] = csp.replace(
+          /(?=(script-src|connect-src) )[^;]*/g,
+          '$& https://www.googletagmanager.com https://www.google-analytics.com',
+        );
+      }
 
-        return headers;
-      },
-      userResDecorator: (_proxyRes, proxyResData, userReq) => {
-        if (/^\/_assets\/app-.*\.js$/.test(userReq.url)) {
-          // console.log("this is a print of proxyResData:");
-          // console.log(proxyResData);
-          return proxyResData
-            .toString()
-            .replace(/^/, ncd)
-            .replace(/window.location.href(?=[^=]|={2,})/g, 'ncd.href()') // Exclude 'window.locaton.href=' but not 'window.locaton.href=='
-            .replace(/window.history.(pushState|replaceState)/g, 'ncd.$1')
-            .replace(/handleMutations\(e\)/g, 'console.log("done")'); // allow me to change links
-        } else if (/^\/image[s]?\//.test(userReq.url)) {
-          return proxyResData;
-        } else if (/^\/forum$/.test(userReq.url)) {
-          return proxyResData;
-        } else {
-          // Assume HTML
-          return proxyResData
-            .toString()
-            .replace('</body>', `${ga}${pageview}</body>`);
-        }
-      },
-    }),
-  );
+      return headers;
+    },
+    userResDecorator: (_proxyRes, proxyResData, userReq) => {
+      if (/^\/_assets\/app-.*\.js$/.test(userReq.url)) {
+        // console.log("this is a print of proxyResData:");
+        // console.log(proxyResData);
+        return proxyResData
+          .toString()
+          .replace(/^/, ncd)
+          .replace(/window.location.href(?=[^=]|={2,})/g, 'ncd.href()') // Exclude 'window.locaton.href=' but not 'window.locaton.href=='
+          .replace(/window.history.(pushState|replaceState)/g, 'ncd.$1')
+          .replace(/handleMutations\(e\)/g, 'console.log("done")'); // allow me to change links
+      } else if (/^\/image[s]?\//.test(userReq.url)) {
+        return proxyResData;
+      } else {
+        // Assume HTML
+        return proxyResData
+          .toString()
+          .replace('</body>', `${ga}${pageview}</body>`);
+      }
+    },
+  }),
+);
 
 if (!process.env.VERCEL_REGION) {
   const port = process.env.PORT || 3000;
