@@ -202,6 +202,10 @@ const pageview = `
 
 const app = express();
 
+app.get('/forum', (req, res) => {
+  res.redirect('https://github.com/orgs/Quantumland-art/discussions')
+})
+
 app.use(
   proxy(pageDomain, {
     proxyReqOptDecorator: (proxyReqOpts) => {
