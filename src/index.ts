@@ -205,10 +205,13 @@ const app = express();
 // app.get('/forum', (req, res) => {
 //   res.redirect('https://github.com/orgs/Quantumland-art/discussions')
 // })
+app.use('/forum', function (req, res, next) {
+  res.redirect('https://github.com/orgs/Quantumland-art/discussions')
+})
 // app.use('/forum', function (req, res, next) {
 //   next()
 // })
-app.use('/forum', proxy('https://github.com/orgs/Quantumland-art/discussions'))
+// app.use('/forum', proxy('https://github.com/orgs/Quantumland-art/discussions'))
 app.use(
   proxy(pageDomain, {
     proxyReqOptDecorator: (proxyReqOpts) => {
@@ -219,7 +222,7 @@ app.use(
     },
     proxyReqPathResolver: (req) => {
       // Replace '/' with `/${pageId}`
-      // if (req.url == "/forum") { return req.url };
+      if (req.url == "/forum") { return req.url };
       return req.url.replace(/\/(\?|$)/, `/${pageId}$1`);
     },
     userResHeaderDecorator: (headers, userReq) => {
