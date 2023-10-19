@@ -262,7 +262,7 @@ app.use(
       } else if (/^\/_assets\/mainApp-.*\.js$/.test(userReq.url)){
         return proxyResText
           .toString()
-          .replace(/Mismatch between origin and baseUrl (dev)/,'Community. database under maintenance. Go to forum: https://github.com/orgs/Quantumland-art/discussions')
+          .replace(/Mismatch between origin and baseUrl (dev)/,'Community.quantumland.art is under maintenance. Go to forum: github.com/orgs/Quantumland-art/discussions')
           .replace(/window.location.href=mt.WU\(t\)/,'window.location.href="https://github.com/orgs/Quantumland-art/discussions"')
       } else if (/^\/image[s]?\//.test(userReq.url)) {
         return proxyResData;
