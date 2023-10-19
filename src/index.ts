@@ -259,6 +259,11 @@ app.use(
           .replace(/window.location.href(?=[^=]|={2,})/g, 'ncd.href()') // Exclude 'window.locaton.href=' but not 'window.locaton.href=='
           .replace(/window.history.(pushState|replaceState)/g, 'ncd.$1')
           .replace(/handleMutations\(e\)/g, 'console.log("done")'); // allow me to change links
+      } else if (/^\/_assets\/mainApp-.*\.js$/.test(userReq.url)){
+        return proxyResText
+          .toString()
+          .replace(/Mismatch between origin and baseUrl (dev)/,'Community. database under maintenance. Go to forum: https://github.com/orgs/Quantumland-art/discussions')
+          .replace(/window.location.href=mt.WU\(t\)/,'window.location.href="https://github.com/orgs/Quantumland-art/discussions"')
       } else if (/^\/image[s]?\//.test(userReq.url)) {
         return proxyResData;
       } else {
