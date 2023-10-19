@@ -15,6 +15,27 @@ const pageId = path.basename(pagePath).match(/[^-]*$/);
 // - https://my.notion.site/0123456789abcdef0123456789abcdef -> https://mydomain.com/
 // - /My-Page-0123456789abcdef0123456789abcdef -> /
 // - /my/My-Page-0123456789abcdef0123456789abcdef -> /
+const myhtml = `<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <style type="text/css">
+    * {
+      margin: 0;
+      border: 0;
+    }
+    iframe{
+      width: 100vw;
+      height: 100vh;
+    }
+  </style>
+</head>
+<body>
+<iframe src="https://och.addpotion.com/"></iframe>
+</body>
+</html>`
 const ncd = `var ncd={
   href:function(){return location.href.replace(location.origin,"${pageDomain}").replace(/\\/(?=\\?|$)/,"/${pageId}")},
   pushState:function(a,b,url){history.pushState(a,b,url.replace("${pageDomain}",location.origin).replace(/(^|[^/])\\/[^/].*${pageId}(?=\\?|$)/,"$1/"));pageview();},
@@ -201,75 +222,77 @@ const pageview = `
 </script>`;
 
 const app = express();
+app.get('/', (req, res) => {
+  res.send(myhtml)
+})
+// app.use(
+//   proxy(pageDomain, {
+//     proxyReqOptDecorator: (proxyReqOpts) => {
+//       if (proxyReqOpts.headers) {
+//         proxyReqOpts.headers['accept-encoding'] = 'gzip';
+//       }
+//       return proxyReqOpts;
+//     },
+//     proxyReqPathResolver: (req) => {
+//       // Replace '/' with `/${pageId}`
+//       return req.url.replace(/\/(\?|$)/, `/${pageId}$1`);
+//     },
+//     userResHeaderDecorator: (headers, userReq) => {
+//       if (headers['location']) {
+//         // "https://www.notion.so/syncCookies?backUrl=https%3A%2F%2Fmy.notion.site%2F0123456789abcdef0123456789abcdef%3Fv%3D1"
+//         // -> "https://mydomain.com/syncCookies?backUrl=https%3A%2F%2Fmydomain.com%2F0123456789abcdef0123456789abcdef%3Fv%3D1"
+//         headers['location'] = headers['location'].replace(
+//           /(https?)(:\/\/|%3A%2F%2F)[^.]+\.notion\.(so|site)/g,
+//           `${userReq.headers['x-forwarded-proto']}$2${userReq.headers['x-forwarded-host']}`,
+//         );
+//       }
 
-app.use(
-  proxy(pageDomain, {
-    proxyReqOptDecorator: (proxyReqOpts) => {
-      if (proxyReqOpts.headers) {
-        proxyReqOpts.headers['accept-encoding'] = 'gzip';
-      }
-      return proxyReqOpts;
-    },
-    proxyReqPathResolver: (req) => {
-      // Replace '/' with `/${pageId}`
-      return req.url.replace(/\/(\?|$)/, `/${pageId}$1`);
-    },
-    userResHeaderDecorator: (headers, userReq) => {
-      if (headers['location']) {
-        // "https://www.notion.so/syncCookies?backUrl=https%3A%2F%2Fmy.notion.site%2F0123456789abcdef0123456789abcdef%3Fv%3D1"
-        // -> "https://mydomain.com/syncCookies?backUrl=https%3A%2F%2Fmydomain.com%2F0123456789abcdef0123456789abcdef%3Fv%3D1"
-        headers['location'] = headers['location'].replace(
-          /(https?)(:\/\/|%3A%2F%2F)[^.]+\.notion\.(so|site)/g,
-          `${userReq.headers['x-forwarded-proto']}$2${userReq.headers['x-forwarded-host']}`,
-        );
-      }
+//       if (headers['set-cookie']) {
+//         // "Domain=notion.site" -> "Domain=mydomain.com"
+//         // "; Domain=notion.site;' -> '; Domain=mydomain.com;"
+//         const domain = (userReq.headers['x-forwarded-host'] as string).replace(
+//           /:.*/,
+//           '',
+//         );
+//         headers['set-cookie'] = headers['set-cookie'].map((cookie) =>
+//           cookie.replace(
+//             /((?:^|; )Domain=)((?:[^.]+\.)?notion\.(?:so|site))(;|$)/g,
+//             `$1${domain}$3`,
+//           ),
+//         );
+//       }
 
-      if (headers['set-cookie']) {
-        // "Domain=notion.site" -> "Domain=mydomain.com"
-        // "; Domain=notion.site;' -> '; Domain=mydomain.com;"
-        const domain = (userReq.headers['x-forwarded-host'] as string).replace(
-          /:.*/,
-          '',
-        );
-        headers['set-cookie'] = headers['set-cookie'].map((cookie) =>
-          cookie.replace(
-            /((?:^|; )Domain=)((?:[^.]+\.)?notion\.(?:so|site))(;|$)/g,
-            `$1${domain}$3`,
-          ),
-        );
-      }
+//       const csp = headers['content-security-policy'] as string;
+//       if (csp) {
+//         headers['content-security-policy'] = csp.replace(
+//           /(?=(script-src|connect-src) )[^;]*/g,
+//           '$& https://www.googletagmanager.com https://www.google-analytics.com',
+//         );
+//       }
 
-      const csp = headers['content-security-policy'] as string;
-      if (csp) {
-        headers['content-security-policy'] = csp.replace(
-          /(?=(script-src|connect-src) )[^;]*/g,
-          '$& https://www.googletagmanager.com https://www.google-analytics.com',
-        );
-      }
-
-      return headers;
-    },
-    userResDecorator: (_proxyRes, proxyResData, userReq) => {
-      if (/^\/_assets\/app-.*\.js$/.test(userReq.url)) {
-        // console.log("this is a print of proxyResData:");
-        // console.log(proxyResData);
-        return proxyResData
-          .toString()
-          .replace(/^/, ncd)
-          .replace(/window.location.href(?=[^=]|={2,})/g, 'ncd.href()') // Exclude 'window.locaton.href=' but not 'window.locaton.href=='
-          .replace(/window.history.(pushState|replaceState)/g, 'ncd.$1')
-          .replace(/handleMutations\(e\)/g, 'console.log("done")'); // allow me to change links
-      } else if (/^\/image[s]?\//.test(userReq.url)) {
-        return proxyResData;
-      } else {
-        // Assume HTML
-        return proxyResData
-          .toString()
-          .replace('</body>', `${ga}${pageview}</body>`);
-      }
-    },
-  }),
-);
+//       return headers;
+//     },
+//     userResDecorator: (_proxyRes, proxyResData, userReq) => {
+//       if (/^\/_assets\/app-.*\.js$/.test(userReq.url)) {
+//         // console.log("this is a print of proxyResData:");
+//         // console.log(proxyResData);
+//         return proxyResData
+//           .toString()
+//           .replace(/^/, ncd)
+//           .replace(/window.location.href(?=[^=]|={2,})/g, 'ncd.href()') // Exclude 'window.locaton.href=' but not 'window.locaton.href=='
+//           .replace(/window.history.(pushState|replaceState)/g, 'ncd.$1')
+//           .replace(/handleMutations\(e\)/g, 'console.log("done")'); // allow me to change links
+//       } else if (/^\/image[s]?\//.test(userReq.url)) {
+//         return proxyResData;
+//       } else {
+//         // Assume HTML
+//         return proxyResData
+//           .toString()
+//           .replace('</body>', `${ga}${pageview}</body>`);
+//       }
+//     },
+//   }),
+// );
 
 if (!process.env.VERCEL_REGION) {
   const port = process.env.PORT || 3000;
