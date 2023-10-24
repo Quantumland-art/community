@@ -31,7 +31,9 @@ The easiest way to get started is to read this [step-by-step guide explaining ho
     max-width: 46em;
   }
 </style> -->
-<div>
+<br>
+<br>
+<div class="communitytitle">
   <h1 class="communitytitle1">Community.</h1>
   <h1 class="communitytitle2">quantumland.art</h1>
 </div>
@@ -61,6 +63,15 @@ The easiest way to get started is to read this [step-by-step guide explaining ho
 </div>
 <br>
 <style>
+  nav {
+    display: none;
+  }
+  .communitytitle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
   .communitytitle1 {
     line-height: 1.2em;
     font-size: 3.03em;
