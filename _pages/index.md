@@ -37,7 +37,7 @@ The easiest way to get started is to read this [step-by-step guide explaining ho
     <div><i class="fa-solid fa-database" style="color:#b35488;"></i> Database</div>
     <div><i class="fa-solid fa-circle-question" style="color:#cd762f;"></i> FAQs</div>
   </div>
-  <div class="communitybodyrow">
+  <div class="communitybodyrow2">
     <div><h2>🌐 Shared in Open Access</h2><br>
       hosted on github, accessible to everyone
     </div>
@@ -49,7 +49,7 @@ The easiest way to get started is to read this [step-by-step guide explaining ho
     </div>
   </div>
 </div>
-
+<br>
 <style>
   .communitybody {
     display: flex;
@@ -66,8 +66,13 @@ The easiest way to get started is to read this [step-by-step guide explaining ho
     .communitybodyrow {
       flex-direction: row;
     }
-    .communitybodyrow > div {
+    .communitybodyrow > div, .communitybodyrow2 > div {
       flex: 1 1 0;
+      padding: 0 0.5em;
+    }
+    .wrapper {
+      max-width: 40em;
+      margin: auto;
     }
   }
 </style>
