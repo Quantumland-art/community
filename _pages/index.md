@@ -37,11 +37,12 @@ The easiest way to get started is to read this [step-by-step guide explaining ho
     <div><i class="fa-solid fa-database" style="color:#b35488;"></i> Database</div>
     <div><i class="fa-solid fa-circle-question" style="color:#cd762f;"></i> FAQs</div>
   </div>
+  <br>
   <div class="communitybodyrow2">
     <div><h2>🌐 Shared in Open Access</h2><br>
       hosted on github, accessible to everyone
     </div>
-    <div><h3>⚡ Powered by the Community</h3><br>
+    <div><h2>⚡ Powered by the Community</h2><br>
       self-maintained, and built by contributions
     </div>
     <div><h2>🔗 Connecting Art &amp; Science</h2><br>
@@ -55,15 +56,21 @@ The easiest way to get started is to read this [step-by-step guide explaining ho
     display: flex;
     flex-direction: column;
   }
-  .communitybodyrow {
+  .communitybodyrow, .communitybodyrow2 {
     display: flex;
     flex-direction: column;
   }
   .communitybodyrow > div {
     text-align: center;
   }
+  @media (max-width: 600px){
+    .communitybodyrow > div, .communitybodyrow2 > div {
+      flex: 1 1 0;
+      padding: 0.5em 0;
+    }
+  }
   @media (min-width: 600px){
-    .communitybodyrow {
+    .communitybodyrow, .communitybodyrow2 {
       flex-direction: row;
     }
     .communitybodyrow > div, .communitybodyrow2 > div {
