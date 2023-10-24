@@ -31,31 +31,24 @@ The easiest way to get started is to read this [step-by-step guide explaining ho
     max-width: 46em;
   }
 </style> -->
-
 <div class="communitybody">
   <div class="communitybodyrow">
-💬 Go to Forum
- 
-<i class="fa-solid fa-database" style="color:#b35488;"></i> Database
- 
-<i class="fa-solid fa-circle-question" style="color:#cd762f;"></i> FAQs
-
+    <p>💬 Go to Forums</p>
+    <p><i class="fa-solid fa-database" style="color:#b35488;"></i> Database</p>
+    <p><i class="fa-solid fa-circle-question" style="color:#cd762f;"></i> FAQs</p>
+  </div>
+  <div class="communitybodyrow">
+    <p>🌐 <h2>Shared in Open Access</h2>
+      hosted on github, accessible to everyone
+    </p>
+    <p><h3>⚡ Powered by the Community</h3>
+      self-maintained, and built by contributions
+    </p>
+    <p><h2>🔗 Connecting Art &amp; Science</h2>
+    promoting new interactions and exchange</p>
+  </div>
 </div>
-<div class="communitybodyrow">
- 
-🌐 ## Shared in 
-Open Access
-hosted on github, accessible to everyone
 
-⚡ ### Powered by 
-the Community
-self-maintained, and built by contributions
-
-🔗 ## Connecting 
-Art & Science
-promoting new interactions and exchange
-</div>
-</div>
 <style>
   .communitybody {
     display: flex;
@@ -64,7 +57,7 @@ promoting new interactions and exchange
   .communitybodyrow {
     display: flex;
   }
-  .communitybodyrow > * {
+  .communitybodyrow > p {
     flex: 1 1 0;
     text-align: center;
   }
