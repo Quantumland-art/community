@@ -32,19 +32,40 @@ The easiest way to get started is to read this [step-by-step guide explaining ho
   }
 </style> -->
 
- 
+<div class="communitybody">
+  <div class="communitybodyrow">
 💬 Go to Forum
  
 <i class="fa-solid fa-database" style="color:#b35488;"></i> Database
  
 <i class="fa-solid fa-circle-question" style="color:#cd762f;"></i> FAQs
+
+</div>
+<div class="communitybodyrow">
  
-🌐 Shared in 
+🌐 ## Shared in 
 Open Access
 hosted on github, accessible to everyone
-⚡ Powered by 
+
+⚡ ### Powered by 
 the Community
 self-maintained, and built by contributions
-🔗 Connecting 
+
+🔗 ## Connecting 
 Art & Science
 promoting new interactions and exchange
+</div>
+</div>
+<style>
+  .communitybody {
+    display: flex;
+    flex-direction: column;
+  }
+  .communitybodyrow {
+    display: flex;
+  }
+  .communitybodyrow > * {
+    flex: 1 1 0;
+    text-align: center;
+  }
+</style>
