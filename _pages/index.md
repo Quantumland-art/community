@@ -38,13 +38,13 @@ The easiest way to get started is to read this [step-by-step guide explaining ho
     <p><i class="fa-solid fa-circle-question" style="color:#cd762f;"></i> FAQs</p>
   </div>
   <div class="communitybodyrow">
-    <p>🌐 <h2>Shared in Open Access</h2>
+    <p><h2>🌐 Shared in Open Access</h2><br>
       hosted on github, accessible to everyone
     </p>
-    <p><h3>⚡ Powered by the Community</h3>
+    <p><h3>⚡ Powered by the Community</h3><br>
       self-maintained, and built by contributions
     </p>
-    <p><h2>🔗 Connecting Art &amp; Science</h2>
+    <p><h2>🔗 Connecting Art &amp; Science</h2><br>
     promoting new interactions and exchange</p>
   </div>
 </div>
