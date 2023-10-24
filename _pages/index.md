@@ -57,9 +57,17 @@ The easiest way to get started is to read this [step-by-step guide explaining ho
   }
   .communitybodyrow {
     display: flex;
+    flex-direction: column;
   }
-  .communitybodyrow > p {
-    flex: 1 1 0;
+  .communitybodyrow > div {
     text-align: center;
+  }
+  @media (min-width: 600px){
+    .communitybodyrow {
+      flex-direction: row;
+    }
+    .communitybodyrow > div {
+      flex: 1 1 0;
+    }
   }
 </style>
