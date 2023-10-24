@@ -1,13 +1,4 @@
 GIT
-  remote: https://github.com/jekyll/jekyll-redirect-from
-  revision: 6a751b274300ece194d8ba7cea934c396dff6163
-  branch: master
-  specs:
-    jekyll-redirect-from (0.16.0)
-      jekyll (>= 3.7, < 5.0)
-      posix-spawn (~> 0.3.9)
-
-GIT
   remote: https://github.com/maximevaillancourt/jekyll-last-modified-at
   revision: e0c918691db625401ef5850a030da59d0124d356
   branch: add-support-for-files-in-git-submodules
@@ -92,7 +83,6 @@ PLATFORMS
 DEPENDENCIES
   jekyll (~> 4.3)
   jekyll-last-modified-at!
-  jekyll-redirect-from!
   nokogiri
   webrick (~> 1.8)
 
