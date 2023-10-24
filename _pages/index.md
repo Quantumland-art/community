@@ -35,9 +35,9 @@ The easiest way to get started is to read this [step-by-step guide explaining ho
  
 💬 Go to Forum
  
-<i class="fa-solid fa-database"></i>Database
+<i class="fa-solid fa-database" style="color:#b35488;"></i> Database
  
-<i class="fa-solid fa-circle-question"></i>FAQs
+<i class="fa-solid fa-circle-question" style="color:#cd762f;"></i> FAQs
  
 🌐 Shared in 
 Open Access
