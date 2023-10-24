@@ -5,7 +5,7 @@ id: home
 permalink: /
 ---
 
-# Welcome! 🌱
+<!-- # Welcome! 🌱
 
 <p style="padding: 3em 1em; background: #f5f7ff; border-radius: 4px;">
   Take a look at <span style="font-weight: bold">[[Your first note]]</span> to get started on your exploration.
@@ -28,6 +28,23 @@ The easiest way to get started is to read this [step-by-step guide explaining ho
 
 <style>
   .wrapper {
-    max-width: 26em;
+    max-width: 46em;
   }
-</style>
+</style> -->
+
+ 
+💬 Go to Forum
+ 
+<i class="fa-solid fa-database"></i>Database
+ 
+<i class="fa-solid fa-circle-question"></i>FAQs
+ 
+🌐 Shared in 
+Open Access
+hosted on github, accessible to everyone
+⚡ Powered by 
+the Community
+self-maintained, and built by contributions
+🔗 Connecting 
+Art & Science
+promoting new interactions and exchange
