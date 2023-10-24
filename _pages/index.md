@@ -44,9 +44,9 @@ The easiest way to get started is to read this [step-by-step guide explaining ho
 <br>
 <div class="communitybody">
   <div class="communitybodyrow">
-    <div>💬 Go to Forums</div>
-    <div><i class="fa-solid fa-database" style="color:#b35488;"></i> Database</div>
-    <div><i class="fa-solid fa-circle-question" style="color:#cd762f;"></i> FAQs</div>
+    <div><a href="/forum">💬 Go to Forums</a></div>
+    <div><a href="/database"><i class="fa-solid fa-database" style="color:#b35488;"></i> Database</a></div>
+    <div><a href="/faqs"><i class="fa-solid fa-circle-question" style="color:#cd762f;"></i> FAQs</a></div>
   </div>
   <br>
   <div class="communitybodyrow2">
