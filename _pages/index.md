@@ -31,6 +31,15 @@ The easiest way to get started is to read this [step-by-step guide explaining ho
     max-width: 46em;
   }
 </style> -->
+<div>
+  <h1 class="communitytitle1">Community.</h1>
+  <h1 class="communitytitle2">quantumland.art</h1>
+</div>
+<br>
+<div class="communitysubtitle" style="text-align: center;">
+  _art, music, software, and events_
+</div>
+<br>
 <div class="communitybody">
   <div class="communitybodyrow">
     <div>💬 Go to Forums</div>
@@ -39,19 +48,36 @@ The easiest way to get started is to read this [step-by-step guide explaining ho
   </div>
   <br>
   <div class="communitybodyrow2">
-    <div><h2>🌐 Shared in Open Access</h2><br>
+    <div><h2>🌐 Shared in Open Access</h2>
       hosted on github, accessible to everyone
     </div>
-    <div><h2>⚡ Powered by the Community</h2><br>
+    <div><h2>⚡ Powered by the Community</h2>
       self-maintained, and built by contributions
     </div>
-    <div><h2>🔗 Connecting Art &amp; Science</h2><br>
+    <div><h2>🔗 Connecting Art &amp; Science</h2>
       promoting new interactions and exchange
     </div>
   </div>
 </div>
 <br>
 <style>
+  .communitytitle1 {
+    display: flex !important;
+    line-height: 1.4285em;
+    font-size: 1.12em;
+/*    flex-shrink: 0 !important;*/
+    background: -webkit-linear-gradient(30deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+  .communitytitle2 {
+    display: flex !important;
+    font-size: 0.8em;
+    line-height: 0.8em;
+    color: rgb(88, 88, 88);
+  }
   .communitybody {
     display: flex;
     flex-direction: column;
