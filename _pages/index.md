@@ -9,7 +9,7 @@ permalink: /
 
 <p style="padding: 3em 1em; background: #f5f7ff; border-radius: 4px;">
   Take a look at <span style="font-weight: bold">[[Your first note]]</span> to get started on your exploration.
-</p>
+</div>
 
 This digital garden template is free, open-source, and [available on GitHub here](https://github.com/maximevaillancourt/digital-garden-jekyll-template).
 
@@ -33,19 +33,20 @@ The easiest way to get started is to read this [step-by-step guide explaining ho
 </style> -->
 <div class="communitybody">
   <div class="communitybodyrow">
-    <p>💬 Go to Forums</p>
-    <p><i class="fa-solid fa-database" style="color:#b35488;"></i> Database</p>
-    <p><i class="fa-solid fa-circle-question" style="color:#cd762f;"></i> FAQs</p>
+    <div>💬 Go to Forums</div>
+    <div><i class="fa-solid fa-database" style="color:#b35488;"></i> Database</div>
+    <div><i class="fa-solid fa-circle-question" style="color:#cd762f;"></i> FAQs</div>
   </div>
   <div class="communitybodyrow">
-    <p><h2>🌐 Shared in Open Access</h2><br>
+    <div><h2>🌐 Shared in Open Access</h2><br>
       hosted on github, accessible to everyone
-    </p>
-    <p><h3>⚡ Powered by the Community</h3><br>
+    </div>
+    <div><h3>⚡ Powered by the Community</h3><br>
       self-maintained, and built by contributions
-    </p>
-    <p><h2>🔗 Connecting Art &amp; Science</h2><br>
-    promoting new interactions and exchange</p>
+    </div>
+    <div><h2>🔗 Connecting Art &amp; Science</h2><br>
+      promoting new interactions and exchange
+    </div>
   </div>
 </div>
 
