@@ -119,7 +119,7 @@ The easiest way to get started is to read this [step-by-step guide explaining ho
 </style>
 <script>
   var urls = document.getElementsByTagName("a");
-  for (var i = 1; i < urls.length-1; i++) {
+  for (var i = 1; i < urls.length; i++) {
     urls[i].target = "_self";
   }
 </script>
