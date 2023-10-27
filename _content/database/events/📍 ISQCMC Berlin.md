@@ -35,7 +35,7 @@ ISQCMC II is a follow-up from the [first symposium in 2021](https://iccmr-quant
 
 [[🎵 Schweigen]]
 
-[[🎵 Rasgar, Saber (2022_23)]]
+[[🎵 Rasgar, Saber]]
 
 [[🎵 Alice Apple]]
 
