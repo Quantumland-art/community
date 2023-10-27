@@ -7,7 +7,7 @@ this is the index of related databases
 
 [[🎪 Events]]
 
-[[🎵 Works]]
+[[🎨 Works]]
 
 [[📚 Writings]]
 
