@@ -1,6 +1,7 @@
 title:               Community.
 include:             ['_pages']
-exclude:             ['_includes/notes_graph.json']
+# exclude:             ['_includes/notes_graph.json']
+exclude:             ['_includes/content_graph.json']
 # You may need to change the base URL depending on your deploy configuration.
 baseurl:             ''
 
@@ -28,16 +29,49 @@ sass:
   style:            :compressed
 
 collections:
-  notes:
+  # notes:
+  #   output: true
+  #   permalink: /:slug
+  content:
     output: true
-    permalink: /:slug
+    permalink: /:categories/:slug
 
 defaults:
   - scope:
       path: "**/*"
     values:
       layout: "default"
+  # - scope:
+  #     path: "_notes/**/*.md"
+  #   values:
+  #     layout: "note"
   - scope:
-      path: "_notes/**/*.md"
+      path: "_content/**/*.md"
     values:
-      layout: "note"
+      layout: "entry"
+  - scope:
+      path: "_content/faqs/**/*.md"
+    values:
+      layout: faq
+      category: "faq"
+  - scope:
+      path: "_content/database/events/**/*.md"
+    values:
+      category: "events"
+      # permalink: /database/events/:slug
+  - scope:
+      path: "_content/database/works/**/*.md"
+    values:
+      category: "works"
+  - scope:
+      path: "_content/database/people/**/*.md"
+    values:
+      category: "people"
+  - scope:
+      path: "_content/database/software/**/*.md"
+    values:
+      category: "software"
+  - scope:
+      path: "_content/database/writings/**/*.md"
+    values:
+      category: "writings"
