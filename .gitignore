@@ -10,6 +10,7 @@ _site/
 
 # Notes graph metadata
 _includes/notes_graph.json
+_includes/content_graph.json
 
 # Obsidian config
 .obsidian/
@@ -17,3 +18,4 @@ _includes/notes_graph.json
 .DS_Store
 .vitepress
 node_modules
+*.rbbkup
