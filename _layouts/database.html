@@ -1,0 +1,58 @@
+---
+layout: default
+---
+
+<article>
+  <div>
+    <h1>{{ page.title }}</h1>
+    <time datetime="{{ page.last_modified_at | date_to_xmlschema }}">{% if page.type != 'pages' %}
+      Last updated on {{ page.last_modified_at | date: "%B %-d, %Y" }}
+      {% endif %}
+    </time>
+    <div>
+        <h4 style="color: purple">{{ page.categories[1] }}</h4>
+    </div>
+  </div>
+
+  <div id="notes-entry-container">
+    <content>
+      <!-- {{ content }} -->
+        <ul>
+		  {% assign recent_notes = site.content | sort: "last_modified_at_timestamp" | reverse %}
+		  {% for note in recent_notes %}
+		    {% if note.categories[0] == page.categories[1] and note.url != page.url %}
+			    <li>
+			      <a class="internal-link" href="{{ site.baseurl }}{{ note.url }}">{{ note.title }}</a>
+			    </li>
+		  	{% endif %}
+		  {% endfor %}
+		</ul>
+    </content>
+
+    <side style="font-size: 0.9em">
+      <h3 style="margin-bottom: 1em">Backlinks:</h3>
+      {% if page.backlinks.size > 0 %}
+      <div style="display: grid; grid-gap: 1em; grid-template-columns: repeat(1fr);">
+      {% for backlink in page.backlinks %}
+        <div class="backlink-box">
+        <a class="internal-link" href="{{ site.baseurl }}{{ backlink.url }}{%- if site.use_html_extension -%}.html{%- endif -%}">{{ backlink.title }}</a><br>
+        </div>
+      {% endfor %}
+      </div>
+      {% else %}
+
+      <div style="font-size: 0.9em">
+        <p>
+          There are no notes linking to this note.
+        </p>
+      </div>
+      {% endif %}
+    </side>
+  </div>
+</article>
+
+<hr>
+
+<p>Here are all the entries in the database, along with their links, visualized as a graph.</p>
+
+{% include notes_graph.html %}

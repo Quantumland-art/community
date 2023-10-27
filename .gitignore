@@ -1,4 +1,21 @@
+# Generated website directory
+_site/
+
+# Sass cache
+.sass-cache/
+
+# Jekyll cache & metadata
+.jekyll-cache/
+.jekyll-metadata
+
+# Notes graph metadata
+_includes/notes_graph.json
+_includes/content_graph.json
+
+# Obsidian config
+.obsidian/
 
 .DS_Store
 .vitepress
 node_modules
+*.rbbkup
