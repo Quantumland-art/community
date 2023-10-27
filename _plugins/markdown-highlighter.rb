@@ -2,7 +2,7 @@
 
 # Turns ==something== in Markdown to <mark>something</mark> in output HTML
 
-Jekyll::Hooks.register [:notes], :pre_render do |doc|
+Jekyll::Hooks.register [:content], :pre_render do |doc|
   replace(doc)
 end
 
