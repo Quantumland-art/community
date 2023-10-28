@@ -31,6 +31,7 @@ ISQCMC II is a follow-up from the [first symposium in 2021](https://iccmr-quant
 - [[👤 Hari Vignesh Shaji]]
 - [[👤 Arianna Crippa]]
 - [[👤 Maria Aguado]]
+
 ### Music
 
 [[🎵 Schweigen]]
