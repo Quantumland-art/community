@@ -4,6 +4,13 @@ title: About
 permalink: /about
 ---
 
-*This is an about page.*
+This website, database, and associated github repository were created by [Omar Costa Hamido](https://omarcostahamido.com) in the context of his Marie-Curie Post Doctoral Fellowship project, IIMPAQCT, at [CEIS20](https://www.uc.pt/iii/ceis20/), in Coimbra, Portugal.
 
-Feel free to tell the world about what you love! 😍
+<style>
+	content {
+		max-width: 500px;
+	    display: flex;
+	    margin: auto;
+	    text-align: justify;
+	}
+</style>

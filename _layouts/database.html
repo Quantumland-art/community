@@ -5,10 +5,10 @@ layout: default
 <article>
   <div>
     <h1>{{ page.title }}</h1>
-    <time datetime="{{ page.last_modified_at | date_to_xmlschema }}">{% if page.type != 'pages' %}
+    <!-- <time datetime="{{ page.last_modified_at | date_to_xmlschema }}">{% if page.type != 'pages' %}
       Last updated on {{ page.last_modified_at | date: "%B %-d, %Y" }}
       {% endif %}
-    </time>
+    </time> -->
     <div>
         <h4 style="color: purple">{{ page.categories[1] }}</h4>
     </div>
@@ -18,7 +18,8 @@ layout: default
     <content>
       <!-- {{ content }} -->
         <ul>
-		  {% assign recent_notes = site.content | sort: "last_modified_at_timestamp" | reverse %}
+		  <!-- {% assign recent_notes = site.content | sort: "last_modified_at_timestamp" | reverse %} -->
+      {% assign recent_notes = site.content | sort_natural %}
 		  {% for note in recent_notes %}
 		    {% if note.categories[0] == page.categories[1] and note.url != page.url %}
 			    <li>
@@ -43,7 +44,7 @@ layout: default
 
       <div style="font-size: 0.9em">
         <p>
-          There are no notes linking to this note.
+          There are no entries linking here.
         </p>
       </div>
       {% endif %}
