@@ -2,7 +2,7 @@
 ---
 ### Developper
 
-[[👤 James L. Weaver]]
+[[👤 James L Weaver]]
 
 ### About
 
