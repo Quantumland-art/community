@@ -1,0 +1,37 @@
+---
+---
+
+[https://link.springer.com/book/10.1007/978-3-031-13909-3](https://link.springer.com/book/10.1007/978-3-031-13909-3)
+
+![](https://user-images.githubusercontent.com/18335360/256076062-e33bcb01-7e67-4fe7-b1f0-b8de215beab6.png)
+
+Quantum Computer Music - Foundations, Methods and Advanced Concepts (Nov 2022)
+
+Editors: [[👤 Eduardo Reck Miranda]]
+
+About this book
+
+This book explores music with respect to quantum computing, a nascent technology that is advancing rapidly. There is a long history of research into using computers for music since the 1950s.
+
+Nowadays, computers are essential for the music economy. Therefore, it is very likely that quantum computers will impact the music industry in the time to come. Consequently, a new area of research and development is emerging: Quantum Computer Music.
+
+This unprecedented book presents the new field of Quantum Computer Music. It introduces the fundamentals of quantum computing for musicians and the latest developments by pioneering practitioners.
+
+1. [Introduction to Quantum Computing for Musicians](https://link.springer.com/chapter/10.1007/978-3-031-13909-3_1) [[👤 Eduardo Reck Miranda]] [[👤 James L Weaver]] Pages 1-19
+2. [Music Fundamentals for Computer Programmers: Representation, Parametrization and Automation](https://link.springer.com/chapter/10.1007/978-3-031-13909-3_2) [[👤 Eduardo Reck Miranda]] Pages 21-42
+3. [Quantum Computer Music: Foundations and Initial Experiments](https://link.springer.com/chapter/10.1007/978-3-031-13909-3_3) [Eduardo Reck Miranda](https://www.notion.so/Eduardo-Reck-Miranda-246d052a6eec415183eabbcc0cdbe011?pvs=21), [Suchitra Basak](https://www.notion.so/Suchitra-Basak-5d532528ac0d43a1bf6faee363d119db?pvs=21) Pages 43-67
+4. [Making Music Using Two Quantum Algorithms](https://link.springer.com/chapter/10.1007/978-3-031-13909-3_4) [Euan J. Allen](https://www.notion.so/Euan-J-Allen-f2753e788297429f97b653f6e81cfdf8?pvs=21), [Jacob F. F. Bulmer](https://www.notion.so/Jacob-F-F-Bulmer-ac94a5df08af4c48b8f53f4f580cc13c?pvs=21), [Simon D. Small](https://www.notion.so/Simon-D-Small-8baf518728a1406d8cdf164001c3c774?pvs=21) Pages 69-82
+5. [Exploring the Application of Gate-Type Quantum Computational Algorithm for Music Creation and Performance](https://link.springer.com/chapter/10.1007/978-3-031-13909-3_5) [Satofumi Souma](https://www.notion.so/Satofumi-Souma-0ba063c246bb4e87bacc42fb731a01b8?pvs=21) Pages 83-103
+6. [Cellular Automata Music Composition: From Classical to Quantum](https://link.springer.com/chapter/10.1007/978-3-031-13909-3_6) [Eduardo Reck Miranda](https://www.notion.so/Eduardo-Reck-Miranda-246d052a6eec415183eabbcc0cdbe011?pvs=21), [Hector Miller-Bakewell](https://www.notion.so/Hector-Miller-Bakewell-016507e2a5134ede8612991c55147a76?pvs=21) Pages 105-130
+7. [QuiKo: A Quantum Beat Generation Application](https://link.springer.com/chapter/10.1007/978-3-031-13909-3_7) [**Scott Oshiro**](https://www.notion.so/Scott-Oshiro-98ccbeed6d60422ba1b72ee740ef192b?pvs=21) Pages 131-158
+8. [QAC: Quantum-Computing Aided Composition](https://link.springer.com/chapter/10.1007/978-3-031-13909-3_8) [OCH](https://www.notion.so/OCH-bb78eb5aad9a473cba8885810b1e855e?pvs=21) Pages 159-195
+9. [Quantum Music Playground Tutorial](https://link.springer.com/chapter/10.1007/978-3-031-13909-3_9) [**James L. Weaver**](https://www.notion.so/James-L-Weaver-f9afeec2b1834fffa39811575aeb6738?pvs=21) Pages 197-222
+10. [Quantum Representations of Sound: From Mechanical Waves to Quantum Circuits](https://link.springer.com/chapter/10.1007/978-3-031-13909-3_10) [**Paulo Itaborai**](https://www.notion.so/Paulo-Itaborai-04452ae2986f4399952cf20268ad489d?pvs=21), [Eduardo Reck Miranda](https://www.notion.so/Eduardo-Reck-Miranda-246d052a6eec415183eabbcc0cdbe011?pvs=21) Pages 223-274
+11. [Experiments in Quantum Frequency Detection Using Quantum Fourier Transform](https://link.springer.com/chapter/10.1007/978-3-031-13909-3_11) [Rajiv Mistry](https://www.notion.so/Rajiv-Mistry-5d02602cdb4c41f5833224df1b1abee9?pvs=21), [Jonathan Ortega](https://www.notion.so/Jonathan-Ortega-76abc2d4652f4103a9be3ee0cf50eeed?pvs=21) Pages 275-295
+12. [Sing and Measure: Sound as Voice as Quanta](https://link.springer.com/chapter/10.1007/978-3-031-13909-3_12) [Maria Mannone](https://www.notion.so/Maria-Mannone-862ada37b4b9480eb8dd2415aae09db4?pvs=21), [Davide Rocchesso](https://www.notion.so/Davide-Rocchesso-c81fba04fb7a4665aefae537e97d3c73?pvs=21) Pages 297-312
+13. [A Quantum Natural Language Processing Approach to Musical Intelligence](https://link.springer.com/chapter/10.1007/978-3-031-13909-3_13) [Eduardo Reck Miranda](https://www.notion.so/Eduardo-Reck-Miranda-246d052a6eec415183eabbcc0cdbe011?pvs=21), [Richie Yeung](https://www.notion.so/Richie-Yeung-2c1418542c4d4b28bb73caed6a9974c6?pvs=21), [Anna Pearson](https://www.notion.so/Anna-Pearson-2b40d6aedc44488c98532bc37f41d6f9?pvs=21), [Konstantinos Meichanetzidis](https://www.notion.so/Konstantinos-Meichanetzidis-1c85fc7fee1e41a8875ecd968a23b468?pvs=21), [Bob Coecke](https://www.notion.so/Bob-Coecke-a88404ccafa0437fb964c6cc76b53bca?pvs=21) Pages 313-356
+14. [Adiabatic Quantum Computing and Applications to Music](https://link.springer.com/chapter/10.1007/978-3-031-13909-3_14) [Jake M. Chuharski](https://www.notion.so/Jake-M-Chuharski-ace329fa464e461bbd32f50f49898919?pvs=21) Pages 357-372
+15. [Applications of Quantum Annealing to Music Theory](https://link.springer.com/chapter/10.1007/978-3-031-13909-3_15) [Ashish Arya](https://www.notion.so/Ashish-Arya-c662f952fd704547a6c2f330fb79c964?pvs=21), [Ludmila Botelho](https://www.notion.so/Ludmila-Botelho-7a69604deed34220a90d8ad5c832d771?pvs=21), [Fabiola Cañete](https://www.notion.so/Fabiola-Ca-ete-7ade2938e65b422ca0ea5d2f6179f362?pvs=21), [Dhruvi Kapadia](https://www.notion.so/Dhruvi-Kapadia-ea669ad23c7a4cca9d2f681911a2d376?pvs=21), [Özlem Salehi](https://www.notion.so/zlem-Salehi-7dde76bec69547bfa23edfbc5a0a4cb1?pvs=21) Pages 373-406
+16. [Making Sound with Light: Sound Synthesis with a Photonic Quantum Computer](https://link.springer.com/chapter/10.1007/978-3-031-13909-3_16) [Eduardo Reck Miranda](https://www.notion.so/Eduardo-Reck-Miranda-246d052a6eec415183eabbcc0cdbe011?pvs=21), [Paul Finlay](https://www.notion.so/Paul-Finlay-afb3d56cd8ce4bb4b9124d9be7a661e8?pvs=21), [Tom Lubowe](https://www.notion.so/Tom-Lubowe-3fb65cc51dd247fdb6b32d23cda23024?pvs=21) Pages 407-431
+17. [New Directions in Quantum Music: Concepts for a Quantum Keyboard and the Sound of the Ising Model](https://link.springer.com/chapter/10.1007/978-3-031-13909-3_17) [Giuseppe Clemente](https://www.notion.so/Giuseppe-Clemente-6038ffa179f643dfa3c5f2342fef040a?pvs=21), [Arianna Crippa](https://www.notion.so/Arianna-Crippa-89339d170f3f45b685dd543fcdbcbef0?pvs=21), [Karl Jansen](https://www.notion.so/Karl-Jansen-8047aadaf88f4e6c8942c93e14c6df40?pvs=21), [Cenk Tüysüz](https://www.notion.so/Cenk-T-ys-z-501479857cc1440a950806233bfe0b01?pvs=21) Pages 433-445
+18. [Superconducting Qubits as Musical Synthesizers for Live Performance](https://link.springer.com/chapter/10.1007/978-3-031-13909-3_18) [**Spencer Topel**](https://www.notion.so/Spencer-Topel-3f559a0d012d4fb2a966626520ef81d5?pvs=21), [Kyle Serniak](https://www.notion.so/Kyle-Serniak-1cf560108d124f95b4e4df4c7918f4ef?pvs=21), [Luke Burkhart](https://www.notion.so/Luke-Burkhart-15567401fd90499f92c13ace832a74d0?pvs=21), [Florian Carle](https://www.notion.so/Florian-Carle-2c5ca53e18ba4276a11edd71fb537f30?pvs=21) Pages 447-464
