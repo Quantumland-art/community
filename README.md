@@ -17,7 +17,8 @@ And if you want to help building the actual database website technical implement
 - make sure you have [jekyll and its dependencies](https://jekyllrb.com/docs/installation/) installed
 - clone the repository
 - `cd` into repo directory
-- run: `bundle exec jekyll serve --livereload`
+- run: `bundle` to install everything
+- run: `bundle exec jekyll serve --livereload` to serve site locally
 
 
 ## Acknowledgements
