@@ -15,6 +15,8 @@ Here is how to create a Github account for free.
 
 3. A verification code will be sent to your email. Copy it on this next screen.
 
+![Capturar07](https://github.com/Quantumland-art/community/assets/18335360/6835ec73-c18d-4cad-a47d-ae2306cd670e)
+
 4. Make your choices on the next couple of personalization questions OR simply skip them by clicking the `Skip personalization` link at the bottom
 
 5. Congrats 🎉 You now have a Github account and will be able to start interacting on the Forum.
