@@ -1,2 +1,4 @@
 ---
+aliases:
+  - 👤 Omar Costa Hamido
 ---

@@ -1,3 +1,5 @@
 ---
+aliases:
+  - 👤 Itaborala
 ---
 

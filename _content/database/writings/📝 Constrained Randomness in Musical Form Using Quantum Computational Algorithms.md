@@ -1,4 +1,4 @@
 ---
 year: "2023"
 ---
-by [[👤 Eren Utku]]
+by [[👤 Eren Utku]]
