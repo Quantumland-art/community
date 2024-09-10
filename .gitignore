@@ -19,3 +19,4 @@ _includes/content_graph.json
 .vitepress
 node_modules
 *.rbbkup
+Gemfile.lock
