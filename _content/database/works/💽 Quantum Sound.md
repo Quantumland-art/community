@@ -3,7 +3,7 @@ year: "2022"
 ---
 [https://yqimusic.bandcamp.com/album/quantum-sound](https://yqimusic.bandcamp.com/album/quantum-sound)
 
-![](https://camo.githubusercontent.com/4fbd04505a63208d3faa19d20090dca53a8883fc5b9eaa3148857d4eb1849afe/68747470733a2f2f66342e6263626974732e636f6d2f696d672f61323736323735313834375f31302e6a7067)
+![](https://camo.githubusercontent.com/e68ba6e2d3406fdbde8a99944eb6f1511a588de9850538117fa907c136b0b376/68747470733a2f2f66342e6263626974732e636f6d2f696d672f61323736323735313834375f31302e6a7067)
 
 1. Side A: Noise 14:20
 2. Side B: Tone 17:17
