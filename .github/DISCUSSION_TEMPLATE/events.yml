@@ -1,0 +1,16 @@
+title: "Name of event [City, COUNTRY] (YYYY-MM-DD)"
+body:
+- type: markdown
+  attributes:
+    value: "Please edit the Title of your post in a way to keep the placeholder format. Feel free to use 2 letter country code."
+- type: textarea
+  attributes:
+    label: "<!-- info -->"
+    value: |
+      **Where:** 
+      **When:** 
+      **URL:** 
+      <!--Add more info below, including a picture (you can drag and drop from your file explorer!)-->
+      
+  validations:
+    required: true
