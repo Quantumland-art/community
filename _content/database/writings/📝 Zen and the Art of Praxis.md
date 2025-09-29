@@ -1,0 +1,18 @@
+---
+year: "2025"
+---
+[https://researchportal.plymouth.ac.uk/en/studentTheses/zen-and-the-art-of-praxis](https://researchportal.plymouth.ac.uk/en/studentTheses/zen-and-the-art-of-praxis)
+
+_by_ [[👤 Peter Thomas]]
+
+## Abstract
+
+In recent years, quantum computing has emerged from the realm of science fiction, becoming a real-world discipline with practical applications. Although NISQ-era hardware imposes significant limitations, and the case for quantum advantage over classical algorithms remains largely theoretical, its potential is being increasingly embraced by the arts; a domain where the merit of exploring new terrain may outweigh the need for technical precision. In particular, quantum computer music has evolved from its origins as a branch of unconventional computing, to an established practice with a growing global community of composers, performers, and researchers. However, the available tools remain largely experimental: often designed for exploring single problem domains, challenging to install, and lacking the flexibility and momentum to drive the field forward.
+
+In this time, live coding has also expanded and diversified, operating outside of algorithmic music's often academic confines, and establishing itself as a vibrant and dynamic cultural force. By contrast, it offers a plethora of mature tools, catering for a wide range of approaches and aesthetic concerns, which have done much for the advancement of the field. This research investigates how these can inform the development of a quantum computer music programming language, one that combines the expressive power of live coding with the computational model of quantum computing. By addressing this challenge, the project aims to open up quantum computer music to non-specialist composers and performers.
+
+The thesis begins with some philosophical reflections on the historical separation of mind and body, thinking and doing, and theory and practice, arguing that, as dichotomies, these fail to capture the lived experience of creative activity. These misconceptions are clearly exposed by live coding, where algorithms are a workable material, and the boundary between thought and action is blurred in the feedback loop between performer and machine. The term praxis is adopted to describe such processes, ones that integrate thought and action. The thesis explores what lessons can be learned from live coding, in order that the experience of performing and composing quantum computer music might similarly embody praxis. Zen, a live coding environment built with modern web technologies, is presented as the primary research solution.
+
+Using an iterative software development methodology, the project documents Zen's evolution, from a live coding environment for exploring pattern interference, to a richly-featured, stand-alone application for the design, execution, and sonification of quantum algorithms. To prioritise learnability, Zen's syntax is deliberately simple, yet, in adhering to pure JavaScript, it maintains the power and flexibility required for advanced algorithmic composition. A selection of music and code examples showcase the software's capabilities, demonstrating the ability to approach quantum computer music in a variety of ways.
+
+The study concludes by evaluating Zen's contribution to both live coding and quantum computer music, positioning it as a necessary step in the broader adoption of quantum technologies in the arts, as well as a novel addition to the live coding canon. Opportunities for future research are outlined to emphasise the potential for live coding and quantum computing to further explore new musical territories.
