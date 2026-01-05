@@ -3,7 +3,7 @@ year: "2023"
 ---
 [https://omarcostahamido.bandcamp.com/album/equations-of-coltrane](https://omarcostahamido.bandcamp.com/album/equations-of-coltrane)
 
-![](https://camo.githubusercontent.com/58f874fe7222c457e406e8f3517bcbd79933816f276f7c28bd44b7d006a16e16/68747470733a2f2f66342e6263626974732e636f6d2f696d672f61313437323032303238345f31302e6a7067)
+![](https://camo.githubusercontent.com/bf6c9c081606add1a991cda091de3d1bc44c379ea199c19200a723709719b3d0/68747470733a2f2f66342e6263626974732e636f6d2f696d672f61313437323032303238345f31302e6a7067)
 
 1. Reunion 01:16
 2. Muon 08:14
