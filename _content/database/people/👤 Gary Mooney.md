@@ -1,0 +1,4 @@
+---
+aliases:
+  - 👤 Gary Mooney
+---
