@@ -1,7 +1,7 @@
 ---
 year: "2022"
 ---
-[https://phonosbcn.bandcamp.com/album/interpreting-quantum-randomness](https://phonosbcn.bandcamp.com/album/interpreting-quantum-randomness)
+[https://lamembrana.bandcamp.com/album/interpreting-quantum-randomness](https://lamembrana.bandcamp.com/album/interpreting-quantum-randomness)
 
 ![](https://camo.githubusercontent.com/8093eaae13e6852be98105a2fdc3ef7b18f45ec6a0038d593504592a877ba0c6/68747470733a2f2f66342e6263626974732e636f6d2f696d672f61313937383231353739365f31302e6a7067)
 
